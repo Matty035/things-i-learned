@@ -161,3 +161,41 @@ switch (arg) {
 For 0, 1, the first alert runs.<br>
 For 2 the second alert runs.<br>
 But for 3, the result of the prompt is a string "3", which is not strictly equal === to the number 3. So we’ve got a dead code in case 3! The default variant will execute.
+
+---
+
+## Ternary Operator/ Conditional Operator
+
+>The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+
+### Syntax
+
+```js
+let result = condition ? value1 : value2;
+```
+The condition is evaluated: if it’s truthy then value1 is returned, otherwise – value2.
+
+#### Example
+```js
+let accessAllowed = (age > 18) ? true : false;
+```
+### Multiple ?
+>A sequence of question mark operators ? can return a value that depends on more than one condition.
+
+#### Example
+```js
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+alert( message );
+```
+
+The first question mark checks whether age < 3.<br>
+If true – it returns 'Hi, baby!'. Otherwise, it continues to the expression after the colon ‘":"’, checking age < 18.<br>
+If that’s true – it returns 'Hello!'. Otherwise, it continues to the expression after the next colon ‘":"’, checking age < 100. <br>
+If that’s true – it returns 'Greetings!'. Otherwise, it continues to the expression after the last colon ‘":"’, returning 'What an unusual age!'.
+
